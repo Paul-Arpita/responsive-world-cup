@@ -37,9 +37,18 @@ h3 {
     color: white;
     font-weight: 700;
     font-size: large;
-    background-color: #DD0000;
+    background-color: saddlebrown;
     border: 0;
     border-radius: 5px;
+    transition: transform 10s linear 1s;
+
+}
+
+.watch-btn:hover {
+    background-color: whitesmoke;
+    color: saddlebrown;
+    transform: rotate(360deg);
+
 }
 
 .half-width {
@@ -56,6 +65,10 @@ h3 {
     display: flex;
     flex-grow: 1;
     margin-top: 40px;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; */
+
 }
 
 nav {
@@ -68,6 +81,17 @@ nav {
     width: 312px;
 }
 
+.link-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: black;
+    height: 312px;
+    width: 312px;
+}
+
 .link-btn {
     /* padding: 30px; */
     text-decoration: none;
@@ -75,9 +99,10 @@ nav {
     height: 64px;
     width: 252px;
     border-radius: 5px;
-    background-color: white;
-    margin: 30px;
-    /* text-align: center; */
+    background-color: rgb(149, 51, 51);
+    margin: 10px 20px;
+    color: white;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,6 +163,27 @@ nav {
     padding: 10px;
 }
 
+.icons {
+    display: flex;
+    justify-content: flex-start;
+
+
+}
+
+.icons i {
+    padding-right: 20px;
+    color: gray;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons i {
+    padding: 20px;
+}
+
 footer {
     background-color: black;
 
@@ -166,28 +212,58 @@ footer h2 {
 /* RESPONSIVENESS */
 
 @media screen and (min-width:577px) and (max-width:992px) {
+    .banner {
+        padding: 30px;
+    }
+
     .banner img {
 
-        width: 75%;
+        width: 100%;
+        height: auto;
+
     }
 
-    nav {
-        border: 1px solid red;
-        display: flex;
+    .banner h3 {
+        font-size: 30px;
+    }
 
+    /* nav {
+        display: flex;
         border: 0;
         background-color: white;
+    } */
+
+    /* .nav-trans-container {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    .nav-trans-container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
 
     }
 
-    .nav-trans-container {
+    .link-btns {
+
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        background-color: white;
+        border: 0;
+        /* margin-bottom: 30px; */
+
     }
 
     .link-btn {
-        /* height: 64px;
-        width: 230px; */
+        height: 64px;
+        width: 150px;
+
         padding: 5px;
         border: 1px solid gray;
         border-radius: 5px;
@@ -196,6 +272,38 @@ footer h2 {
     .cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         margin: 0;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+
+    }
+
+    .half-width {
+        width: 100%;
+    }
+
+    .banner h3 {
+        font-size: 40px;
+    }
+
+    .nav-trans-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .cards {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
     }
 }
